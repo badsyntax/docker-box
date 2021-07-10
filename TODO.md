@@ -1,0 +1,7 @@
+- [x] Redirect https to http without breaking the letsencrypt acme challenge
+- [x] Save docker-box setup data (email, hostnames etc)
+- [ ] Test docker-registry works
+- [ ] Add info to README on docker-registry without tls
+- [ ] Add log about docker-regustry to install script if no tls 
+- [ ] Prompt for TLS during installation
+- [ ] IPV6

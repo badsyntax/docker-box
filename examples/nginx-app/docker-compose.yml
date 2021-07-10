@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    image: docker-registry.example.com/badsyntax/nginx-app:latest
+    networks:
+      - traefik-public
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+    deploy:
+      mode: replicated
+      replicas: 2
+      labels:
+        - 'traefik.docker.network=traefik-public'
+        - 'traefik.http.middlewares.nginx-app-redirectscheme.redirectscheme.permanent=true'
+        - 'traefik.http.middlewares.nginx-app-redirectscheme.redirectscheme.scheme=https'
+        - 'traefik.http.routers.nginx-app-secure.entrypoints=websecure'
+        - 'traefik.http.routers.nginx-app-secure.rule=Host(`nginx-app.example.com`)'
+        - 'traefik.http.routers.nginx-app-secure.tls.certresolver=letsencrypt'
+        - 'traefik.http.routers.nginx-app.entrypoints=web'
+        - 'traefik.http.routers.nginx-app.middlewares=nginx-app-redirectscheme'
+        - 'traefik.http.routers.nginx-app.rule=Host(`nginx-app.example.com`)'
+        - 'traefik.http.services.nginx-app-service.loadbalancer.server.port=80'
+
+networks:
+  traefik-public:
+    external: true

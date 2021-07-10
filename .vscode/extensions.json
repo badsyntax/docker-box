@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "foxundermoon.shell-format",
+    "ms-azuretools.vscode-docker"
+  ]
+}

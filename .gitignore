@@ -1,0 +1,4 @@
+/conf/portainer-stack.yml
+/conf/traefik-stack.yml
+/conf/docker-registry-stack.yml
+/setup
