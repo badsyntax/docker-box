@@ -48,3 +48,7 @@ By default `traefik` config is set in the stack file as cli flags, but `/etc/tra
 2. Create a config file at location `/var/lib/docker/volumes/traefik_etc/_data/traefik.yml`
 
 </details>
+
+## License
+
+See [LICENSE.md](./LICENSE.md).
