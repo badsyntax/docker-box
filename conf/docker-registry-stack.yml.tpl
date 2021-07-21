@@ -4,7 +4,7 @@ services:
   registry:
     image: registry:{{ DOCKER_REGISTRY_VERSION }}
     volumes:
-      - docker_registry_data:/var/lib/registry
+      - data:/var/lib/registry
     networks:
       - {{ TRAEFIK_NETWORK }}
     healthcheck:
@@ -40,7 +40,7 @@ services:
         {%- endif %}
 
 volumes:
-  docker_registry_data:
+  data:
 
 networks:
   {{ TRAEFIK_NETWORK }}:
