@@ -10,15 +10,7 @@ A lightweight docker application platform for single servers that gives you:
 
 See [examples/nginx-app](./examples/nginx-app) for a real-world example.
 
-## Demo
-
-![asciicast](./img/screencast.gif)
-
 ## Installation
-
-### Overview
-
-`docker-box` first installs portainer as a swarm stack, then installs `traefix` and `docker-registry` using the `portainer` API (using the `primary` endpoint), allowing you to manage the `traefix` and `docker-registry` stacks with portainer.
 
 ### System Requirements
 
@@ -36,14 +28,9 @@ Run the following script to install:
 curl -s https://raw.githubusercontent.com/badsyntax/docker-box/master/setup.sh | sudo -E bash
 ```
 
-It is safe to re-run the above script after initial installation as `docker-box` will not overwrite any existing config files.
+## Demo
 
-## Usage
-
-Some general guidelines:
-
-- Use multiple service replicas to ensure zero downtime service deploys
-- Use service healthchecks to allow docker swarm to route to healthy containers
+![asciicast](./img/screencast.gif)
 
 ## FAQ
 
