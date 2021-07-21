@@ -10,6 +10,10 @@ A lightweight docker application platform for single servers that gives you:
 
 See [examples/nginx-app](./examples/nginx-app) for a real-world example.
 
+## Demo
+
+![asciicast](./img/screencast.gif)
+
 ## Installation
 
 ### Overview
