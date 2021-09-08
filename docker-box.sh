@@ -11,23 +11,6 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-export DEBIAN_FRONTEND=noninteractive
-
-ARCH=$(dpkg --print-architecture)
-PORTAINER_VERSION="linux-${ARCH}"
-TRAEFIK_NETWORK="traefik-public"
-TRAEFIK_VERSION="latest"
-DOCKER_REGISTRY_VERSION="latest"
-ACME_STORAGE="/letsencrypt/acme.json"
-DOCKER_BOX_PATH="${HOME}/docker-box"
-DOCKER_BOX_DATA_PATH="${DOCKER_BOX_PATH}/.docker-box-data"
-DOCKER_BOX_HOST="docker-box.example.com"
-DOCKER_REGISTRY_USERNAME="richard"
-CERTIFICATE_EMAIL="email@example.com"
-PORTAINER_ADMIN_PASSWORD=""
-ENABLE_TLS="n"
-ENABLE_HTTPS_REDIRECTION="n"
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -101,6 +84,23 @@ if [ "${OS_VERSION}" != "20.04" ]; then
 fi
 
 echo -e "${GREEN}OK${NC}"
+
+export DEBIAN_FRONTEND=noninteractive
+
+ARCH=$(dpkg --print-architecture)
+PORTAINER_VERSION="linux-${ARCH}"
+TRAEFIK_NETWORK="traefik-public"
+TRAEFIK_VERSION="latest"
+DOCKER_REGISTRY_VERSION="latest"
+ACME_STORAGE="/letsencrypt/acme.json"
+DOCKER_BOX_PATH="${HOME}/docker-box"
+DOCKER_BOX_DATA_PATH="${DOCKER_BOX_PATH}/.docker-box-data"
+DOCKER_BOX_HOST="docker-box.example.com"
+DOCKER_REGISTRY_USERNAME="richard"
+CERTIFICATE_EMAIL="email@example.com"
+PORTAINER_ADMIN_PASSWORD=""
+ENABLE_TLS="n"
+ENABLE_HTTPS_REDIRECTION="n"
 
 log "Installing setup packages..."
 
