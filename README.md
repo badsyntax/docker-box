@@ -1,5 +1,7 @@
 # docker-box
 
+[![Analyze](https://github.com/badsyntax/docker-box/actions/workflows/analyze.yml/badge.svg)](https://github.com/badsyntax/docker-box/actions/workflows/analyze.yml)
+
 A lightweight docker application platform for single servers that gives you:
 
 - docker swarm
