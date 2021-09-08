@@ -179,6 +179,7 @@ log "Setting up docker swarm..."
 if ! docker service ls 2>/dev/null; then
   docker swarm init
 fi
+docker swarm update --task-history-limit 1
 docker node ls
 
 log "Setting up acme storage volume..."
