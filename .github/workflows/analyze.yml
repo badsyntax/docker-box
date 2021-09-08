@@ -1,0 +1,23 @@
+name: Analyze
+
+on:
+  push:
+    branches: [master]
+
+  pull_request:
+    branches: [master]
+
+jobs:
+  lint-dockerfile:
+    runs-on: ubuntu-20.04
+    name: Lint dockerfile
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - name: Lint app dockerfile
+        uses: brpaz/hadolint-action@v1.5.0
+        with:
+          dockerfile: ./examples/nginx-app/Dockerfile
+
+      - name: Lint shell scripts
+        run: make lint
