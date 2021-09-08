@@ -18,3 +18,6 @@ jobs:
         uses: brpaz/hadolint-action@v1.5.0
         with:
           dockerfile: ./examples/nginx-app/Dockerfile
+
+      - name: Lint shell scripts
+        run: make lint
