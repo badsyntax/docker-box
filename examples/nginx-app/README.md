@@ -6,18 +6,18 @@ Deploy an nginx application to your docker-box.
 
 1. Build and push the docker image:
 
-```bash
-docker login registry.docker-box.example.com
+    ```console
+    docker login registry.docker-box.example.com
 
-docker buildx create --use
+    docker buildx create --use
 
-docker buildx build --platform linux/amd64,linux/arm64 \
-  -t registry.docker-box.example.com/user/nginx-app:latest \
-  --push .
-```
+    docker buildx build --platform linux/amd64,linux/arm64 \
+      -t registry.docker-box.example.com/user/nginx-app:latest \
+      --push .
+    ```
 
 2. Log into portainer and use the contents of [docker-compose.yml](./docker-compose.yml) to create a new stack
-3. Once the stack is created access the app at https://nginx-app.example.com
+3. Once the stack is created access the app at <https://nginx-app.example.com>
 
 ## Continuous Deployment with GitHub Actions
 
@@ -98,5 +98,5 @@ jobs:
         run: |
           curl --fail -X POST "$DEPLOY_ENDPOINT" || exit 1
         env:
-          DEPLOY_ENDPOINT: '${{ secrets.DEPLOY_ENDPOINT }}'
+          DEPLOY_ENDPOINT: "${{ secrets.DEPLOY_ENDPOINT }}"
 ```
