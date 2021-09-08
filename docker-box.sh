@@ -375,7 +375,7 @@ else
   log_warn "docker-registry stack already exists, skipping..."
 fi
 
-log "Pruning unused docker objects..."
+log "Pruning unused docker objects (this can take a while)..."
 docker system prune --force
 
 log_success "Success! Your box is ready to use!"
