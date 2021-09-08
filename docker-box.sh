@@ -284,7 +284,7 @@ if ! PORTAINER_SWARM_ID=$(
     --header "Authorization: Bearer ${PORTAINER_API_TOKEN}" \
     --header 'Accept: application/json' \
     --request GET \
-    portainer:9000/api/endpoints/${PORTAINER_ENDPOINT_ID}/docker/swarm |
+    "portainer:9000/api/endpoints/${PORTAINER_ENDPOINT_ID}/docker/swarm" |
     jq --raw-output .ID
 ); then
   log_error "Unable to get swarm id"
