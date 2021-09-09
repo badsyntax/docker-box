@@ -4,8 +4,12 @@ services:
   traefik:
     image: traefik:{{ TRAEFIK_VERSION }}
     ports:
-      - '80:80'
-      - '443:443'
+      - target: 80
+        published: 80
+        mode: host
+      - target: 443
+        published: 443
+        mode: host
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - 'etc:/etc/traefik'
