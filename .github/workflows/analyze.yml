@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
     name: Lint dockerfile
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v3.2.0
 
       - name: Lint app dockerfile
         uses: brpaz/hadolint-action@v1.5.0
